@@ -2,7 +2,7 @@ package ru.job4j.puzzle;
 
 public class Win {
     public static boolean vMethod(int[][] board, int j) {
-        for(int i = 0; i < 5; i++) {
+        for(int i = 0; i < board.length; i++) {
             if(board[i][j] != 1) {
                 return false;
             }
@@ -11,7 +11,7 @@ public class Win {
     }
 
     public static boolean gMethod(int[][] board, int j) {
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < board.length; i++) {
             if (board[j][i] != 1) {
                 return false;
             }
