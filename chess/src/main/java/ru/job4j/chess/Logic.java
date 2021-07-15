@@ -21,10 +21,12 @@ public final class Logic {
     }
 
     private boolean free(Cell[] steps) throws OccupiedCellException {
-        for (Cell step : steps) {
-            for (int j = 0; j < figures.length && figures[j] != null; j++) {
-                if (step == figures[j].position()) {
-                    throw new OccupiedCellException();
+        for(Figure exmpl: figures) {
+            for (Cell step : steps) {
+                if (exmpl != null && step.equals(exmpl.position())) {
+                    throw new OccupiedCellException(
+                            String.format("ход невозможно выполнить, имеется преграда")
+                    );
                 }
             }
         }
@@ -43,6 +45,8 @@ public final class Logic {
                 return index;
             }
         }
-        throw new FigureNotFoundException();
+        throw new FigureNotFoundException(
+                String.format("нечему двигаться...")
+        );
     }
 }

@@ -19,7 +19,8 @@ public class BishopBlackTest {
     @Test
     public void copy() {
         BishopBlack obj = new BishopBlack(Cell.A1);
-        Assert.assertEquals(obj.position(), obj.copy(obj.position()).position());
+        BishopBlack another = (BishopBlack) obj.copy(Cell.C3);
+        Assert.assertEquals(another.position(), Cell.C3);
     }
 
     @Test
@@ -27,12 +28,5 @@ public class BishopBlackTest {
         BishopBlack obj = new BishopBlack(Cell.C1);
         assertThat(obj.way(Cell.G5), is(new Cell[]{Cell.D2, Cell.E3, Cell.F4, Cell.G5}));
     }
-
-//    @Test
-//    public void wayA1H7() {
-//        BishopBlack obj = new BishopBlack(Cell.A1);
-//        assertThat(obj.way(Cell.H8), is(new Cell[]{Cell.B2, Cell.C3, Cell.D4, Cell.E5,
-//        Cell.F6, Cell.G7, Cell.H8}));
-//    }
 
 }
