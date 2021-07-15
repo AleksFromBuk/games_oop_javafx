@@ -22,13 +22,13 @@ public class LogicTest {
     }
 
     @Test(expected = FigureNotFoundException.class)
-    public void moveOneCase() throws FigureNotFoundException, OccupiedCellException {
+    public void moveOneCase() throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
         Logic logic = new Logic();
         logic.move(Cell.C1, Cell.H6);
     }
 
     @Test(expected = OccupiedCellException.class)
-    public void moveSecondCase() throws FigureNotFoundException, OccupiedCellException {
+    public void moveSecondCase() throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
 
         Logic logic = new Logic();
         logic.add(new BishopBlack(Cell.C1));
@@ -37,7 +37,7 @@ public class LogicTest {
     }
 
     @Test(expected = ImpossibleMoveException.class)
-    public void moveThridCase() throws FigureNotFoundException, OccupiedCellException {
+    public void moveThridCase() throws FigureNotFoundException, OccupiedCellException, ImpossibleMoveException {
 
         Logic logic = new Logic();
         logic.add(new BishopBlack(Cell.C1));

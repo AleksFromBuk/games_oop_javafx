@@ -23,7 +23,7 @@ public final class Logic {
     private boolean free(Cell[] steps) throws OccupiedCellException {
         for(Figure exmpl: figures) {
             for (Cell step : steps) {
-                if (exmpl != null && step.equals(exmpl.position())) {
+                if (exmpl != null && exmpl.position().equals(step)) {
                     throw new OccupiedCellException(
                             String.format("ход невозможно выполнить, имеется преграда")
                     );
