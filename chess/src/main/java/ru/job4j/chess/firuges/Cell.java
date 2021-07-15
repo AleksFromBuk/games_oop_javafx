@@ -36,4 +36,13 @@ public enum Cell {
         }
         return rsl;
     }
+    
+    public static void main(String args[]) {
+
+        for (Cell cell : values()) {
+            System.out.println(cell);
+        }
+        //int x = findBy(A1);
+        //System.out.println(A1.x + System.lineSeparator() + A1.y);
+    } 
 }
